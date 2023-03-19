@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container reviewcontainer">
     <div class="main">
       <!-- 个人信息 -->
       <div class="r_person_info">
@@ -7,12 +7,7 @@
           <div class="r_person_name">{{ mihoyo.p_name }}</div>
           <div class="r_person_contact">{{ mihoyo.p_phone }} | {{ mihoyo.p_contact }}</div>
         </div>
-        <div
-          class="r_p_2"
-          :style="{
-            'background-image': `url(${mihoyo.p_img})`
-          }"
-        ></div>
+        <img class="r_p_2" :src="mihoyo.p_img" />
       </div>
       <!-- 教育经历 -->
       <div class="r_person_common">
@@ -58,7 +53,7 @@
         </template>
       </div>
       <!-- 校园经历 -->
-      <div class="r_person_common">
+      <div v-if="mihoyo.campus.length" class="r_person_common">
         <div class="card">
           <div class="card_1">校园经历</div>
           <div class="card_2"></div>

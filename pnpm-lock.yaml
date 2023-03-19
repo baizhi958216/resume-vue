@@ -11,7 +11,7 @@ specifiers:
   eslint: ^8.34.0
   eslint-plugin-vue: ^9.9.0
   highlight.js: ^11.7.0
-  html2canvas: ^1.4.1
+  html-to-image: ^1.11.11
   jspdf: ^2.5.1
   markdown-it: ^13.0.1
   npm-run-all: ^4.1.5
@@ -27,7 +27,7 @@ specifiers:
 dependencies:
   '@types/markdown-it': 12.2.3
   highlight.js: 11.7.0
-  html2canvas: 1.4.1
+  html-to-image: 1.11.11
   jspdf: 2.5.1
   markdown-it: 13.0.1
   pinia: 2.0.33_7h6e7cvei2rsgyre2mq4fyhehq
@@ -771,6 +771,7 @@ packages:
     resolution: {integrity: sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==}
     engines: {node: '>= 0.6.0'}
     dev: false
+    optional: true
 
   /boolbase/1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
@@ -903,6 +904,7 @@ packages:
     dependencies:
       utrie: 1.0.2
     dev: false
+    optional: true
 
   /cssesc/3.0.0:
     resolution: {integrity: sha512-/Tb/JcjK111nNScGob5MNtsntNM1aCNUDipB/TkwZFhyDrrE47SOx/18wF2bbjgc3ZzCSKW1T5nt5EbFoAz/Vg==}
@@ -1486,6 +1488,10 @@ packages:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
     dev: true
 
+  /html-to-image/1.11.11:
+    resolution: {integrity: sha512-9gux8QhvjRO/erSnDPv28noDZcPZmYE7e1vFsBLKLlRlKDSqNJYebj6Qz1TGd5lsRV+X+xYyjCKjuZdABinWjA==}
+    dev: false
+
   /html2canvas/1.4.1:
     resolution: {integrity: sha512-fPU6BHNpsyIhr8yyMpTLLxAbkaK8ArIBcmZIRiBLiDhjeqvXolaEmDGmELFuX9I4xDcaKKcJl+TKZLqruBbmWA==}
     engines: {node: '>=8.0.0'}
@@ -1493,6 +1499,7 @@ packages:
       css-line-break: 2.1.0
       text-segmentation: 1.0.3
     dev: false
+    optional: true
 
   /ignore/5.2.4:
     resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
@@ -2309,6 +2316,7 @@ packages:
     dependencies:
       utrie: 1.0.2
     dev: false
+    optional: true
 
   /text-table/0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}
@@ -2392,6 +2400,7 @@ packages:
     dependencies:
       base64-arraybuffer: 1.0.2
     dev: false
+    optional: true
 
   /validate-npm-package-license/3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
