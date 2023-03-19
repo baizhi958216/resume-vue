@@ -4,7 +4,7 @@ interface IResumeSize {
    */
   info: number
   /**
-   * `review`: 简历预览组件宽百分比
+   * @deprecated `review`: 简历预览组件宽百分比
    */
   review: number
 }

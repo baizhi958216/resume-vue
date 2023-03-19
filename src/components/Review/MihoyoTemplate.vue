@@ -15,7 +15,7 @@
         ></div>
       </div>
       <!-- 教育经历 -->
-      <div class="r_person_common r_person_edu">
+      <div class="r_person_common">
         <div class="card">
           <div class="card_1">教育经历</div>
           <div class="card_2"></div>
@@ -28,7 +28,7 @@
         <div v-html="mdi.render(mihoyo.edu.desc)"></div>
       </div>
       <!-- 实习经历 -->
-      <div class="r_person_common r_person_inter">
+      <div v-if="mihoyo.inter.length" class="r_person_common">
         <div class="card">
           <div class="card_1">实习经历</div>
           <div class="card_2"></div>
@@ -43,7 +43,7 @@
         </template>
       </div>
       <!-- 项目经历 -->
-      <div class="r_person_common r_person_project">
+      <div v-if="mihoyo.project.length" class="r_person_common">
         <div class="card">
           <div class="card_1">项目经历</div>
           <div class="card_2"></div>
@@ -58,7 +58,7 @@
         </template>
       </div>
       <!-- 校园经历 -->
-      <div class="r_person_common r_person_campus">
+      <div class="r_person_common">
         <div class="card">
           <div class="card_1">校园经历</div>
           <div class="card_2"></div>
@@ -73,7 +73,7 @@
         </template>
       </div>
       <!-- 技能/证书及其它 -->
-      <div class="r_person_common r_person_skill">
+      <div v-if="mihoyo.skill" class="r_person_common">
         <div class="card">
           <div class="card_1">技能/证书及其它</div>
           <div class="card_2" style="left: -8px"></div>
@@ -82,7 +82,7 @@
         <div v-html="mdi.render(mihoyo.skill)"></div>
       </div>
       <!-- 获奖经历 -->
-      <div class="r_person_common r_person_reward">
+      <div v-if="mihoyo.reward" class="r_person_common">
         <div class="card">
           <div class="card_1">获奖经历</div>
           <div class="card_2"></div>
@@ -91,13 +91,13 @@
         <div v-html="mdi.render(mihoyo.reward)"></div>
       </div>
       <!-- 游戏经历 -->
-      <div class="r_person_common r_person_hobby">
+      <div v-if="mihoyo.game" class="r_person_common">
         <div class="card">
           <div class="card_1">游戏经历</div>
           <div class="card_2"></div>
         </div>
         <hr class="r_hr" />
-        <div v-html="mdi.render(mihoyo.hobby)"></div>
+        <div v-html="mdi.render(mihoyo.game)"></div>
       </div>
     </div>
   </div>
@@ -108,7 +108,6 @@ import { useMihoyoStore } from '@/stores/mihoyo'
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js' //导入代码高亮文件
 import 'highlight.js/styles/monokai-sublime.css' //导入代码高亮样式
-
 const mdi = new MarkdownIt({
   html: true,
   linkify: true,
@@ -130,19 +129,19 @@ const mihoyo = useMihoyoStore()
 
 <style scoped>
 .container {
-  width: 80%;
-  border-radius: 20px;
   box-sizing: border-box;
   padding: 15px;
   background: linear-gradient(90deg, rgba(24, 191, 246, 1), rgba(24, 114, 246, 1));
-  max-width: 21cm;
-  max-height: 29.7cm;
+  width: 21cm;
+  height: 29.7cm;
   overflow: scroll;
 }
 .main {
   width: 100%;
+  height: 100%;
   border-radius: 15px;
   background: #fff;
+  overflow: scroll;
 }
 .card {
   display: flex;
@@ -180,6 +179,7 @@ const mihoyo = useMihoyoStore()
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 100px;
 }
 .r_person_name {
   font-weight: bold;
@@ -190,10 +190,9 @@ const mihoyo = useMihoyoStore()
   width: fit-content;
 }
 .r_p_2 {
+  margin-left: 30px;
   width: 70px;
-  height: 10%;
-  left: 72%;
-  position: absolute;
+  height: 70px;
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;

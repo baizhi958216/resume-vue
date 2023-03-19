@@ -9,7 +9,7 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
       meta: {
-        title: '简历可视化'
+        title: '简历可视化 | Markdown简历'
       }
     }
   ]

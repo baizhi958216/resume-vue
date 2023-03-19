@@ -22,10 +22,5 @@ const props = withDefaults(defineProps<IResume>(), {
 <style scoped>
 .review {
   user-select: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  min-width: 700px;
 }
 </style>

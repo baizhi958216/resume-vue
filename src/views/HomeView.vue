@@ -1,18 +1,13 @@
 <template>
   <div class="main" @mouseup="up.up()">
     <resume-info
+      :style="{
+        width: `${info}px`
+      }"
       :template="infotemplate"
-      :style="{
-        width: `${info}%`
-      }"
     />
-    <catch-line @move="resize" ref="up" />
-    <resume-review
-      :template="reviewtemplate"
-      :style="{
-        width: `${review}%`
-      }"
-    />
+    <catch-line @move="calwidth" ref="up" />
+    <resume-review :template="reviewtemplate" />
   </div>
 </template>
 
@@ -20,28 +15,24 @@
 import ResumeInfo from '@/components/ResumeInfo.vue'
 import CatchLine from '@/components/CatchLine.vue'
 import ResumeReview from '@/components/ResumeReview.vue'
-import type { IResumeSize } from '@/views/home.interface'
 import { ref, shallowRef } from 'vue'
 import MihoyoTemplateInfo from '@/components/Info/MihoyoTemplate.vue'
 import MihoyoTemplateReview from '@/components/Review/MihoyoTemplate.vue'
-
-const info = ref<number>(60)
-const review = ref<number>(40)
-
-const up = ref()
-
-const resize = (line: IResumeSize) => {
-  info.value = line.info
-  review.value = line.review
-}
+import type { IResumeSize } from './home.interface'
 
 const infotemplate = shallowRef(MihoyoTemplateInfo)
 const reviewtemplate = shallowRef(MihoyoTemplateReview)
+const info = ref<number>(600)
+const up = ref()
+const calwidth = (line: IResumeSize) => {
+  info.value = line.info
+}
 </script>
 
 <style scoped>
 .main {
   display: flex;
+  flex-wrap: wrap;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   text-rendering: optimizeLegibility;
