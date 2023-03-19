@@ -1,7 +1,31 @@
 <template>
-  <div></div>
+  <div class="review">
+    <component :is="props.template" />
+  </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import MihoyoTemplate from '@/components/Review/MihoyoTemplate.vue'
+import type { Component } from 'vue'
 
-<style scoped></style>
+interface IResume {
+  template?: Component
+  data?: any
+}
+
+const props = withDefaults(defineProps<IResume>(), {
+  template: MihoyoTemplate,
+  data: {}
+})
+</script>
+
+<style scoped>
+.review {
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-width: 700px;
+}
+</style>

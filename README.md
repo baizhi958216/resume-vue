@@ -2,6 +2,12 @@
 
 ## 生成可视化简历
 
+### 模板目录
+
+`src/components/Info`: 信息填写模板  
+`src/components/Review`: 简历预览模板  
+`src/stores`: 数据模板
+
 - 项目搭建
 
 ```sh
