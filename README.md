@@ -1,5 +1,7 @@
 # resume-vue
 
+![main](./public/main.png)
+
 ## 生成可视化简历
 
 todo:
