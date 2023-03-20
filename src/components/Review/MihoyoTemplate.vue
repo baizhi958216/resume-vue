@@ -165,7 +165,7 @@ const mihoyo = useMihoyoStore()
   color: #cccccc46;
 }
 .r_person_info {
-  height: 15%;
+  height: 8%;
   display: flex;
   padding-top: 20px;
   justify-content: center;
