@@ -58,6 +58,11 @@ GPA: 3.76/4.00(专业前5%)
   },
   actions: {},
   persist: {
-    enabled: true
+    enabled: true,
+    strategies: [
+      {
+        storage: localStorage
+      }
+    ]
   }
 })
